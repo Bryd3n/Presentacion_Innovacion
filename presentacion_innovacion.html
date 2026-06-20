@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovación: De la Idea al Éxito - Capítulos 7 y 8</title>
+  <style>
+    /* CSS logic for slides */
+    :root {
+      --bg-dark: #0a0b10;
+      --text-main: #f0f0f5;
+      --accent-cyan: #00f0ff;
+      --accent-purple: #8a2be2;
+      --accent-pink: #ff007f;
+      --font-main: 'Outfit', sans-serif;
+    }
+    body, html {
+      margin: 0; padding: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      overflow: hidden; /* No scrolling allowed */
+      height: 100vh;
+      width: 100vw;
+    }
+    #presentation {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+      transform: translateY(20px);
+      padding: clamp(20px, 4vw, 40px);
+      box-sizing: border-box;
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      z-index: 10;
+    }
+    .slide.prev {
+      transform: translateY(-20px);
+    }
+    
+    h1 { font-size: clamp(3rem, 6vw, 6rem); text-align: center; margin-bottom: 0.5rem; 
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { font-size: clamp(2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 1rem; color: var(--accent-cyan); }
+    h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--accent-pink); margin-bottom: 1rem; }
+    p, li { font-size: clamp(1.1rem, 2vw, 1.5rem); line-height: 1.6; max-width: 1000px; text-align: center; }
+    ul { text-align: left; max-width: 800px; margin: 0 auto; }
+    li { margin-bottom: 0.8rem; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(15px, 2vw, 30px); width: 100%; max-width: 1200px; }
+    .card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+    .card h4 { font-size: 1.5rem; color: var(--accent-cyan); margin-top: 0; }
+    
+    .image-container { max-width: 60%; max-height: 40vh; margin-top: 20px; border-radius: 20px; overflow: hidden; box-shadow: 0 0 30px rgba(138, 43, 226, 0.4); }
+    .image-container img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    
+    /* Navigation indicators */
+    .controls { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; gap: 10px; align-items: center;}
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background 0.3s; }
+    .dot.active { background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+    
+    /* Decoration */
+    .bg-shape { position: absolute; filter: blur(100px); opacity: 0.3; z-index: -1; border-radius: 50%; }
+    .shape1 { top: -10%; left: -10%; width: 500px; height: 500px; background: var(--accent-purple); }
+    .shape2 { bottom: -10%; right: -10%; width: 600px; height: 600px; background: var(--accent-cyan); }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+  
+  <div id="presentation">
+    
+    <!-- Slide 1: Title -->
+    <section class="slide active">
+      <h1>Innovación: De la Idea al Éxito</h1>
+      <h2>Capítulos 7 y 8</h2>
+      <p>Una mirada a la medición, estructura y talento detrás de la innovación.</p>
+      <div class="image-container">
+        <img src="innovation_idea_bulb_1781965686342.jpg" alt="Idea Innovation">
+      </div>
+    </section>
+
+    <!-- Slide 2: Cap 7 -->
+    <section class="slide">
+      <h2>Capítulo 7: ¿Cómo se mide la innovación?</h2>
+      <p>Lo que no se puede medir, no existe físicamente (William Pepperell Montague).</p>
+      <div class="card" style="max-width: 800px; margin-top: 30px;">
+        <p>Los indicadores nos permiten tomar medidas para mejorar el desempeño en un mercado competitivo. Utilizando el enfoque del <strong>Cuadro de Mando Integral (Balanced Scorecard)</strong>, la innovación puede medirse desde tres grandes perspectivas.</p>
+      </div>
+    </section>
+
+    <!-- Slide 3: Perspectivas -->
+    <section class="slide">
+      <h2>Perspectivas de Medición</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Cultura</h4>
+          <p>Mide la preparación, capacitación y el tiempo dedicado a fomentar un ambiente innovador en la empresa.</p>
+        </div>
+        <div class="card">
+          <h4>Procesos</h4>
+          <p>Evalúa cómo fluyen las ideas, el tiempo de análisis y los canales de recolección (internos y abiertos).</p>
+        </div>
+        <div class="card">
+          <h4>Resultados</h4>
+          <p>Cuantifica el éxito de las ideas implementadas, su rentabilidad y el impacto en nuevos negocios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Cultura -->
+    <section class="slide">
+      <h2>Indicadores de Cultura</h2>
+      <ul>
+        <li><strong>Apego a la tendencia:</strong> Brecha entre las tendencias seguidas vs. el sector.</li>
+        <li><strong>Capacitación:</strong> % de empleados y gerentes entrenados en innovación.</li>
+        <li><strong>Búsqueda de insights:</strong> Número de entrevistas a clientes/proveedores.</li>
+        <li><strong>Dedicación:</strong> % de tiempo laboral destinado a la innovación.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 5: Procesos -->
+    <section class="slide">
+      <h2>Indicadores de Procesos</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Flujo de Ideas</h4>
+          <p>Cantidad de ideas provenientes de empleados y de fuentes externas (innovación abierta).</p>
+        </div>
+        <div class="card">
+          <h4>Velocidad</h4>
+          <p>Tiempo promedio para analizar, valorar nuevas ideas y convertirlas en un prototipo real.</p>
+        </div>
+        <div class="card">
+          <h4>Madurez y Participación</h4>
+          <p>Grado de madurez en innovación y la relación de ideas generadas por el total de empleados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Resultados y Hit Rate -->
+    <section class="slide">
+      <h2>Indicadores de Resultados y Hit Rate</h2>
+      <ul>
+        <li><strong>Relación de ideas desarrolladas:</strong> Ideas en prototipo vs Ideas recibidas.</li>
+        <li><strong>Hit rate:</strong> Ideas convertidas en lanzamientos efectivos. Meta ejemplar: 5%.</li>
+        <li><strong>Impacto financiero:</strong> Punto de equilibrio, % de ingresos por innovación.</li>
+        <li><strong>Nuevos horizontes:</strong> Nuevos productos, servicios o negocios generados.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 7: Cap 8 Intro -->
+    <section class="slide">
+      <h2>Capítulo 8: Estructura y Talento</h2>
+      <p>Ninguna organización ha creado jamás una innovación. <strong>Las personas innovan, no las compañías.</strong> (Seth Godin)</p>
+      <div class="image-container">
+        <img src="innovation_team_1781965708967.jpg" alt="Innovation Team">
+      </div>
+    </section>
+
+    <!-- Slide 8: Roles I -->
+    <section class="slide">
+      <h2>Roles Clave en el Equipo (Parte I)</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Detector e Informante</h4>
+          <p>El detector busca oportunidades y problemas; el informante traduce datos organizacionales clave.</p>
+        </div>
+        <div class="card">
+          <h4>Soñador (Inventor)</h4>
+          <p>Genera ideas creativas basadas en las necesidades detectadas por el equipo.</p>
+        </div>
+        <div class="card">
+          <h4>Probador y Defensor</h4>
+          <p>El probador anticipa efectos y fallos con visión sistémica; el defensor empuja la idea con fuerza.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Roles II -->
+    <section class="slide">
+      <h2>Roles Clave en el Equipo (Parte II)</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Sustentador y Gerente</h4>
+          <p>Evalúa la factibilidad técnica y económica; el gerente impulsa la ejecución formal del proyecto.</p>
+        </div>
+        <div class="card">
+          <h4>Patrocinador y Protector</h4>
+          <p>Consiguen recursos y defienden al equipo de las amenazas burocráticas.</p>
+        </div>
+        <div class="card">
+          <h4>Vendedor</h4>
+          <p>Comunica el valor de la innovación a clientes y usuarios, masificando el resultado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10: Comité y Estructura -->
+    <section class="slide">
+      <h2>Estructura Formal y Gobierno</h2>
+      <p style="margin-bottom: 30px;">Para consolidar el esfuerzo se requiere una estructura con liderazgo visible.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Comité de Innovación</h4>
+          <p>Equipo multidisciplinario que asesora, controla, evalúa ideas y promueve investigaciones de tendencias.</p>
+        </div>
+        <div class="card">
+          <h4>Chief Innovation Officer (CIO)</h4>
+          <p>Reporta a la directiva, diseña la estrategia, entrena equipos y asegura la rentabilidad.</p>
+        </div>
+        <div class="card">
+          <h4>Consultor de Innovación</h4>
+          <p>Apoya el proceso cuestionando lo tradicional y aportando tendencias globales como insumos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 11: Personalidades -->
+    <section class="slide">
+      <h2>Diversidad de Personalidades</h2>
+      <p>Utilizando modelos como <strong>DiSC®</strong>, el talento se clasifica para complementarse armónicamente:</p>
+      <ul>
+        <li><strong>Dimensiones principales:</strong> Dominante, influyente, concienzudo y estable.</li>
+        <li><strong>Patrones resultantes:</strong> Creativo, resolutivo, investigador, promotor, entre otros.</li>
+        <li><strong>Comunicación:</strong> Identificar formas visuales, auditivas, kinestésicas para integrar al talento.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 12: Cierre -->
+    <section class="slide">
+      <h2>Cultura de Innovación Sostenible</h2>
+      <div class="card" style="max-width: 900px; margin: 0 auto;">
+        <p>La innovación se perpetúa cuando hay un liderazgo visible, enfoque en talento, mecanismos para redistribuir recursos, diálogo constante, métricas claras y actividades que promuevan la creatividad.</p>
+        <h4 style="text-align:center; margin-top: 20px; font-size: 2rem;">¡El éxito de la innovación empieza con la gente!</h4>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="controls" id="controls"></div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.getElementById('controls');
+    let currentSlide = 0;
+    
+    // Initialize controls
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 0 ? 'active' : ''}`;
+      dot.onclick = () => goToSlide(i);
+      controls.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    function updateSlides(oldIndex, newIndex) {
+      slides[oldIndex].classList.remove('active');
+      dots[oldIndex].classList.remove('active');
+      
+      // Determine direction for animation if needed, though opacity+transform handles it well
+      if(oldIndex < newIndex) {
+         slides[oldIndex].classList.add('prev');
+      } else {
+         slides[oldIndex].classList.remove('prev');
+      }
+      
+      slides[newIndex].classList.add('active');
+      slides[newIndex].classList.remove('prev');
+      dots[newIndex].classList.add('active');
+    }
+    
+    function goToSlide(index) {
+      if(index === currentSlide) return;
+      if(index < 0 || index >= slides.length) return;
+      updateSlides(currentSlide, index);
+      currentSlide = index;
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'ArrowRight' || e.key === 'Space' || e.key === 'Enter') {
+        goToSlide(currentSlide + 1);
+      } else if(e.key === 'ArrowLeft') {
+        goToSlide(currentSlide - 1);
+      }
+    });
+    
+    // Wheel navigation with debounce
+    let wheelTimeout;
+    document.addEventListener('wheel', (e) => {
+      if(wheelTimeout) return;
+      wheelTimeout = setTimeout(() => {
+        if(e.deltaY > 0) goToSlide(currentSlide + 1);
+        else goToSlide(currentSlide - 1);
+        wheelTimeout = null;
+      }, 500);
+    });
+    
+    // Touch navigation
+    let touchStartX = 0;
+    let touchEndX = 0;
+    document.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    document.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) goToSlide(currentSlide + 1);
+      if (touchEndX > touchStartX + 50) goToSlide(currentSlide - 1);
+    });
+  </script>
+</body>
+</html>
